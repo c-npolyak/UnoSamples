@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "ChainedAttachedPropsIssue.Windows": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

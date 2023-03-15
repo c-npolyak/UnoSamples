@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/ChainedAttachedPropsIssue/.vs/ChainedAttachedPropsIssue
+/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/bin/Debug
+/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/obj
+/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue.Windows/bin/x86/Debug/net7.0-windows10.0.19041.0
+/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue/ChainedAttachedPropsIssue.Windows/obj

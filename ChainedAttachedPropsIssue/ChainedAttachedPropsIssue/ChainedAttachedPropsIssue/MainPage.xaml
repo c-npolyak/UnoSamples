@@ -1,0 +1,38 @@
+﻿<Page
+    x:Class="ChainedAttachedPropsIssue.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChainedAttachedPropsIssue"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid x:Name="RootPanel"
+          Tag="Hello World!!!"
+          local:AttachedProps.MyString="Hello World!!!">
+
+        <StackPanel x:Name="TheStackPanel"
+                    Orientation="Vertical"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Tag="{Binding ElementName=RootPanel}"
+                    local:AttachedProps.MyElement="{Binding ElementName=RootPanel}">
+
+            <!-- Foreground is Red, Path consists of two chained attached properties, Does not show!!!-->
+            <TextBlock Text="{Binding Path=(local:AttachedProps.MyElement).(local:AttachedProps.MyString), ElementName=TheStackPanel}"
+                       Margin="20"
+                       FontSize="30" 
+                       Foreground="Black"/>
+
+            <!-- Foreground is blue, Path consists of normal property (Tag) and attached property - shows! -->
+            <TextBlock Text="{Binding Path=Tag.(local:AttachedProps.MyString), ElementName=TheStackPanel}"
+                       Margin="20"
+                       FontSize="30" 
+                       Foreground="Blue"/>
+
+            <!-- Foreground is Black, Path consists of an attached property followed by a normal property - shows! -->
+            <TextBlock Text="{Binding Path=(local:AttachedProps.MyElement).Tag, ElementName=TheStackPanel}"
+                       Margin="20"
+                       FontSize="30"
+                       Foreground="Black" />
+        </StackPanel>
+    </Grid>
+</Page>
